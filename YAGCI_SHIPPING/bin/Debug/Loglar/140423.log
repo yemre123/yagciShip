@@ -1,0 +1,16 @@
+[13:45:31] -> Server was unable to process request. ---> Requested objects cannot be loaded, because they are absent in the data store. These objects can  already be deleted/purged. If you see this exception once again with the same objects in the list, note that the referential integrity of your data store may be broken. In this instance, contact your system administrator. Requested objects: YAGCI_SHIPPING.Data.Tables.FORMLAR(1006), YAGCI_SHIPPING.Data.Tables.FORMLAR(1007).   konum: System.Web.Services.Protocols.SoapHttpClientProtocol.ReadResponse(SoapClientMessage message, WebResponse response, Stream responseStream, Boolean asyncCall)
+   konum: System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   konum: YAGCI_SHIPPING.serv.serv.FormlariAl() c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Web References\serv\Reference.cs içinde: satır 118
+   konum: YAGCI_SHIPPING.Formlar.FaturaSorgula.simpleButton1_Click(Object sender, EventArgs e) c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Formlar\FaturaSorgula.cs içinde: satır 63
+[13:52:07] -> İşlem zaman aşımına uğradı   konum: System.Web.Services.Protocols.WebClientProtocol.GetWebResponse(WebRequest request)
+   konum: System.Web.Services.Protocols.HttpWebClientProtocol.GetWebResponse(WebRequest request)
+   konum: System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   konum: YAGCI_SHIPPING.serv.serv.FormlariAl() c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Web References\serv\Reference.cs içinde: satır 118
+   konum: YAGCI_SHIPPING.Formlar.FaturaSorgula.simpleButton1_Click(Object sender, EventArgs e) c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Formlar\FaturaSorgula.cs içinde: satır 63
+[15:12:41] -> yetki bilgileri alinamadi.   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.Formlar() c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 108
+   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.MainMenu_Load(Object sender, EventArgs e) c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 76
+[15:31:03] -> Uzak sunucuya bağlanılamıyor   konum: System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   konum: System.Net.HttpWebRequest.GetRequestStream()
+   konum: System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   konum: YAGCI_SHIPPING.serv.serv.KayitlariAl(FORMGENERIC[] dataList) c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Web References\serv\Reference.cs içinde: satır 89
+   konum: YAGCI_SHIPPING.Formlar.FaturaSorgula.simpleButton1_Click(Object sender, EventArgs e) c:\Users\Administrator\Desktop\Projeler\yedek\yagci_shipping-23.04.2014.12.29\YAGCI_SHIPPING\Formlar\FaturaSorgula.cs içinde: satır 52
