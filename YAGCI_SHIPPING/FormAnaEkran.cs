@@ -53,7 +53,10 @@ namespace YAGCI_SHIPPING.Formlar
             barSubItemTema.Enabled =
                 barSubItem2.Enabled =
                                       Properties.Settings.Default.ProgramMod > 0;
-            
+
+
+            barButtonItem25.Visibility =
+                Properties.Settings.Default.ProgramMod > 0 ? DevExpress.XtraBars.BarItemVisibility.Never : DevExpress.XtraBars.BarItemVisibility.Always;
 
             //var snc1 = new XPCollection<Data.Tables.KULLANICI>(DB.XP.Crs).Where(x => x.ADI == "LOGO" && x.PWORD == "1");
 

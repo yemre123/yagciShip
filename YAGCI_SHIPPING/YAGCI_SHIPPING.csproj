@@ -145,9 +145,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b9a188c8922137c6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\x86\Debug\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\BORDRO_web_a\bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -182,7 +181,6 @@
     <Compile Include="Arayuz\TemelForm.Designer.cs">
       <DependentUpon>TemelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="CLS\IniFile.cs" />
     <Compile Include="CLS\Lisans.cs" />
     <Compile Include="Formlar\FormArsiv.cs">
