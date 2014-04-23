@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using DevExpress.Data.Filtering;
 using DevExpress.Xpo;
-
+//deeee
 namespace YAGCI_SHIPPING.Formlar
 {
     public partial class FaturaSorgula : DevExpress.XtraEditors.XtraForm
