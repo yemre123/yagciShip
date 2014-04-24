@@ -3,7 +3,7 @@ D:
 cd "D:\Projeler\Calismalar\YAGCI_SHIPPING\\"
 
 del /s /q *.vspscc
-
+sadsadasDasdas
 del /s /q /f /ah *.suo
 
 del /s /q *.sup
