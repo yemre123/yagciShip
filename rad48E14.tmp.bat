@@ -12,7 +12,7 @@ del /s /q *.aps
 
 del /s /q *.obj
 
-del /s /q *.idb
+del /s /q *.idbfgfgdg
 
 del /s /q *.pdb
 
