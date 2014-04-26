@@ -59,7 +59,6 @@ namespace YAGCI_SHIPPING
                 return;
             }
 
-            DB.XP.Connect(Properties.Settings.Default.constr);
 
             Cultur = new CultureInfo("Tr-tr");
 
@@ -75,7 +74,11 @@ namespace YAGCI_SHIPPING
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             DevExpress.LookAndFeel.LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
-                        
+
+
+            DB.XP.Connect(Properties.Settings.Default.constr);            
+
+
             Application.Run(new Formlar.FormAnaEkran());
             //Application.Run(new Formlar.FormTasarim());
         }
