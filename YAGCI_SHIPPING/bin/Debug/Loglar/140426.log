@@ -1,0 +1,4 @@
+[12:32:55] -> Bellek yetersiz.   konum: System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   konum: YAGCI_SHIPPING.UIcone.resimAcToolStripMenuItem_Click(Object sender, EventArgs e) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\UC\UIcone.cs içinde: satır 181
+[12:33:05] -> Bellek yetersiz.   konum: System.Drawing.Image.FromFile(String filename, Boolean useEmbeddedColorManagement)
+   konum: YAGCI_SHIPPING.UIcone.resimAcToolStripMenuItem_Click(Object sender, EventArgs e) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\UC\UIcone.cs içinde: satır 181

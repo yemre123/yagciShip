@@ -170,9 +170,10 @@ namespace YAGCI_SHIPPING
 
         private void resimAcToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //resim formati
             OpenFileDialog op = new OpenFileDialog();
             op.AddExtension = false;
-            op.Filter = "Resim (*.jpeg)|*.jpeg|Bitmep (*.bmp)|*.bmp";
+            op.Filter = "Resim (*.jpg)|*.jpg|Resim (*.jpeg)|*.jpeg|Bitmep (*.bmp)|*.bmp";
             op.FilterIndex = 1;
             if(op.ShowDialog()== DialogResult.OK)
             {
