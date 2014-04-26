@@ -57,6 +57,9 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void FormTasarim_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //object SalakObje = System.Reflection.Missing.Value;
+            //axOfficeViewer1.Close();
+            //((Microsoft.Office.Interop.Word.ApplicationClass)axOfficeViewer1.Application).Quit();
             Kill();
         }
 
@@ -103,6 +106,8 @@ namespace YAGCI_SHIPPING.Formlar
 
                     if (doc.Paragraphs.Count > 1)
                         doc.Paragraphs[2].Range.Text = "KL Form No:00-Rev 0"; // index 0 dan baslamiyor 1 den basliyor
+                    
+                    System.Diagnostics.Trace.WriteLine(axOfficeViewer1.Application.GetType().ToString());
                     
                     doc.Content.InsertAfter("deneme");
                 }
