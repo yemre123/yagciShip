@@ -8,147 +8,9 @@ using Data;
 
 namespace YAGCI_SHIPPING.Data.Tables
 {
-    [Persistent(@"SURECHAREKET")]
-    public class SURECHAREKET : XPObject
-    {
-             
-        public Nullable<int> PRJID { get; set; }
-             
-        public Nullable<int> ITEMID { get; set; }
-
-        decimal fMIKTAR;
-        public decimal MIKTAR
-        {
-            get { return fMIKTAR; }
-            set { SetPropertyValue<decimal>("MIKTAR", ref fMIKTAR, value); }
-        }
-
-        [DbType("datetime NOT ")]
-        public Nullable<DateTime> TARIH
-        {
-            get;
-            set;
-        }
-
-        [DbType("int NOT ")]
-        public Nullable<int> KULID
-        {
-            get;
-            set;
-        }
-
-        int fONAYLAYACAK;
-        public int ONAYLAYACAK
-        {
-            get { return fONAYLAYACAK; }
-            set { SetPropertyValue<int>("ONAYLAYACAK", ref fONAYLAYACAK, value); }
-        }
-        int fPERSID;
-        public int PERSID
-        {
-            get { return fPERSID; }
-            set { SetPropertyValue<int>("PERSID", ref fPERSID, value); }
-        }
 
 
-        bool fYONETIMKARARI;
-        public bool YONETIMKARARI
-        {
-            get { return fYONETIMKARARI; }
-            set { SetPropertyValue<bool>("YONETIMKARARI", ref fYONETIMKARARI, value); }
-        }
-
-        bool fSOZLESME;
-        public bool SOZLESME
-        {
-            get { return fSOZLESME; }
-            set { SetPropertyValue<bool>("SOZLESME", ref fSOZLESME, value); }
-        }
-
-        bool fIHALE;
-        public bool IHALE
-        {
-            get { return fIHALE; }
-            set { SetPropertyValue<bool>("IHALE", ref fIHALE, value); }
-        }
-
-        [DbType("int NOT ")]
-        public Nullable<int> SURECID
-        {
-            get;
-            set;
-        }
-        
-        [DbType("varchar(32) NOT ")]
-        public string MODUL
-        {
-            get;
-            set;
-        }
-
-        DB.KullaniciIslemleri fISLEM;
-        public DB.KullaniciIslemleri ISLEM
-        {
-            get { return fISLEM; }
-            set { SetPropertyValue<DB.KullaniciIslemleri>("ISLEM", ref fISLEM, value); }
-        }
-
-
-        int fTEKLIFID;
-        public int TEKLIFID
-        {
-            get { return fTEKLIFID; }
-            set { SetPropertyValue<int>("TEKLIFID", ref fTEKLIFID, value); }
-        }
-
-
-       
-        public Nullable<short> CARDTYPE { get; set; }
-      
-        public Nullable<short> FIRMANO { get; set; }
-       
-        public Nullable<int> UNISETREF { get; set; }
-
-        public SURECHAREKET(Session session) : base(session) { }
-        public SURECHAREKET() : base(Session.DefaultSession) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
-    }
-
-            
-
-    public class FORM1 : XPObject
-    {
-
-
-        public string FORM_BASLIK { get; set; }
-        public string FORM_NAME { get; set; }
-
-        public int KULLANICI_ID { get; set; }
-
-        public DateTime TARIH { get; set; }
-
-        public string ALAN1 { get; set; }
-        public string ALAN2 { get; set; }
-
-
-        public string ALAN3 { get; set; }
-        public string ALAN4 { get; set; }
-        public string ALAN5 { get; set; }
-        public string ALAN6 { get; set; }
-        public string ALAN7 { get; set; }
-        public string ALAN8 { get; set; }
-
-
-        [Size(255)]
-        public string ACIKLAMA { get; set; }
-        
- 
-
-        public FORM1(Session session) : base(session) { }
-        public FORM1() : base(Session.DefaultSession) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
-    }
-
+     [DeferredDeletion(false), OptimisticLocking(false)]
     public class FORMHAREKET : XPObject
     {
 
@@ -251,7 +113,7 @@ namespace YAGCI_SHIPPING.Data.Tables
 
         public DateTime CDATE { get; set; }
         public bool DURUM { get; set; }
-        public byte[] FL { get; set; }
+        public byte[] DOSYA { get; set; }
 
 
         public TASARIMLAR(Session session) : base(session) { }
@@ -269,7 +131,7 @@ namespace YAGCI_SHIPPING.Data.Tables
         public string GEMINO { get; set; }
 
         public DateTime CDATE { get; set; }       
-        public byte[] FL { get; set; }
+        public byte[] DOSYA { get; set; }
 
 
         public ARSIV(Session session) : base(session) { }
