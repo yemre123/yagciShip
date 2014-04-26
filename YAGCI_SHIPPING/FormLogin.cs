@@ -90,7 +90,7 @@ namespace YAGCI_SHIPPING.Formlar
                 cmbKullanici.Properties.GetDataSourceRowByKeyValue(cmbKullanici.EditValue) as Data.Tables.KULLANICI;
              
               
-                if (kul == null || kul.PWORD==txtPass.Text)
+                if (kul == null || kul.PWORD!=txtPass.Text)
                     throw new Exception("Bilgiler dogru deil , kontrol ediniz..!");
 
                 Gnl.AktifKullanici = kul;
