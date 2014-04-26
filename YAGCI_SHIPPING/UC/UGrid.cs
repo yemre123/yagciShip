@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using YAGCI_SHIPPING.Kls;
  
 
 namespace YAGCI_SHIPPING
@@ -49,6 +50,7 @@ namespace YAGCI_SHIPPING
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
+            Gnl.Write("Bas 53");
             Cursor.Current = Cursors.Default;
             base.OnMouseUp(e);
             if (MeSelected != null)
@@ -64,6 +66,8 @@ namespace YAGCI_SHIPPING
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
+            Gnl.Write("Bas 69");
+
             ((Control)this.Tag).Text = this.Name;
 
             int msg = -1; //if (msg == -1) at the end of this, then the mousedown is not a drag.
@@ -232,13 +236,15 @@ namespace YAGCI_SHIPPING
 
         #region Tasima
         private Point cursorOffset;
-        private bool moving = false;
+        private bool moving = false, nomoving = false;
         private Cursor currentCursor;
 
         private void gridControl1_MouseDown(object sender, MouseEventArgs e)
         {
+            Gnl.Write("Bas 244");
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
+                Gnl.Write("Bas 247");
                 cursorOffset = e.Location;
                 moving = true;
                 currentCursor = base.Cursor;
@@ -248,8 +254,10 @@ namespace YAGCI_SHIPPING
 
         private void gridControl1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (moving)
+            Gnl.Write("Bas 257");
+            if (moving && nomoving == false)
             {
+                Gnl.Write("Bas 260");
                 Point clientPosition = base.Parent.PointToClient(System.Windows.Forms.Cursor.Position);
                 base.Location = new Point(clientPosition.X - cursorOffset.X, clientPosition.Y - cursorOffset.Y);
             }
@@ -257,6 +265,7 @@ namespace YAGCI_SHIPPING
 
         private void gridControl1_MouseUp(object sender, MouseEventArgs e)
         {
+            Gnl.Write("Bas 268");
             moving = false;
             base.Cursor = currentCursor;
             if (MeSelected != null)
@@ -273,14 +282,23 @@ namespace YAGCI_SHIPPING
 
         private void gridControl1_MouseLeave(object sender, EventArgs e)
         {
+            Gnl.Write("Bas 285");
             moving = false;
+            nomoving = false;
         }
 
         #endregion
 
         private void gridControl1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Insert)
+            Gnl.Write("Bas 288");
+            if (e.Control && e.KeyCode == (Keys.LButton | Keys.ShiftKey))
+            {
+                Gnl.Write("Bas 291");
+                nomoving = true;
+                moving = false;
+            }
+            else if (e.KeyCode == Keys.Insert)
             {
                 SatirEkle();
             }
@@ -317,6 +335,12 @@ namespace YAGCI_SHIPPING
                 }
                 MeSelected(this, e2);
             }
+        }
+
+        private void gridControl1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Gnl.Write("Bas 336");
+            nomoving = false;
         }
 
     }
