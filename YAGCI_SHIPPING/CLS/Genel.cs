@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+using Ionic.Zip;
 
 namespace YAGCI_SHIPPING.Kls
 {
     class Gnl
     {
+        //test
         static IniFile _ini = null;
         public static IniFile IniData
         {
@@ -59,6 +62,31 @@ namespace YAGCI_SHIPPING.Kls
 
         public static DevExpress.LookAndFeel.DefaultLookAndFeel DefLookFeel1 = null;    
         public static DevExpress.XtraBars.Bar TaskBar = null;
+
+
+        public static byte[] FileZip(string pppth)
+        {
+            FileInfo fl = new FileInfo(pppth);
+            
+            if (!fl.Exists)
+                throw new Exception("Dosya buluamadı..");
+
+            string p = "";
+
+            using (ZipFile zip = new ZipFile())
+            {
+                p = fl.FullName.Replace(fl.Name, fl.Name.Replace(fl.Extension, ".zip"));
+                zip.AddFile(fl.FullName, @"\");
+                zip.Save(p);
+            }
+
+            FileInfo zfl = new FileInfo(p);
+
+            if (!zfl.Exists)
+                throw new Exception("dosya arşivlenemedi");
+
+            return File.ReadAllBytes(zfl.FullName);
+        }
 
 
         public static DateTime GetDate {
