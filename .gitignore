@@ -6,3 +6,6 @@
 obj/
 *.suo
 *.xml
+*.sln
+*.csproj
+*.csproj.user
