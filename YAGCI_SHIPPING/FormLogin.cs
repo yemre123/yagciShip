@@ -103,7 +103,10 @@ namespace YAGCI_SHIPPING.Formlar
                 //    throw new Exception("Firma seçilmemiş , kontrol ediniz..!");
 
                 //Gnl.AktifFirma = frm;
- 
+
+
+                DB.XP.DbUpdateSchema();                    
+
                 DialogResult = DialogResult.OK;
             }
             catch (Exception exc)
