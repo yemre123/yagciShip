@@ -37,7 +37,7 @@ namespace YAGCI_SHIPPING.Formlar
             DB.XP.Connect(Properties.Settings.Default.constr);
 
 #if DEBUG
-            new FormTrace().Show();
+            //new FormTrace().Show();
             Gnl.AktifKullanici = DB.XP.Crs.FindObject<Data.Tables.KULLANICI>(CriteriaOperator.Parse(" ADI = ? And PWORD = ?", "UMÝT", "1"));
             if (object.ReferenceEquals(Gnl.AktifKullanici, null))
                 Kls.Dlg.Hata("Test kullanicisi tanimli degil!");
@@ -304,7 +304,8 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new FormDesing() { MdiParent = this, FrmAnaEkran = this }.Show();
+            //new FormDesing() { MdiParent = this, FrmAnaEkran = this }.Show();
+            new FormTasarim() { MdiParent = this, FrmAnaEkran = this }.Show();
         }
 
 

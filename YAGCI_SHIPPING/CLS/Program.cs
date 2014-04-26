@@ -75,8 +75,8 @@ namespace YAGCI_SHIPPING
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             DevExpress.LookAndFeel.LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
                         
-            //Application.Run(new Formlar.FormAnaEkran());
-            Application.Run(new Formlar.FormTasarim());
+            Application.Run(new Formlar.FormAnaEkran());
+            //Application.Run(new Formlar.FormTasarim());
         }
     }
 }

@@ -9,16 +9,17 @@ using System.Windows.Forms;
 
 namespace YAGCI_SHIPPING.Formlar
 {
-    public partial class FormTasarim : Form
+    public partial class FormTasarim : Gui.BaseForm
     {
         public FormTasarim()
         {
             InitializeComponent();
         }
 
+        public Formlar.FormAnaEkran FrmAnaEkran { get; set; }
+
         private void FormTasarim_Load(object sender, EventArgs e)
         {
-            axOfficeViewer1.Open(@"D:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\bin\Kitap1.xls");
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            axOfficeViewer1.Save();
+            axOfficeViewer1.Open(@"D:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\bin\gemi.doc");
         }
     }
 }
