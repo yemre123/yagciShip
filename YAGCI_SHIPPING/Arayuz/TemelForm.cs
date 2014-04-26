@@ -28,13 +28,13 @@ namespace YAGCI_SHIPPING.Gui
         {
             Form frm = (Form)sender;
 
-            foreach (Control cnt in frm.Controls)
-            {
-                if (cnt.GetType() == typeof(DevExpress.XtraGrid.GridControl))
-                {
-                    //((DevExpress.XtraGrid.GridControl)cnt).MainView.SaveLayoutToRegistry(frm.Name + cnt.Name);
-                }
-            }
+            //foreach (Control cnt in frm.Controls)
+            //{
+            //    if (cnt.GetType() == typeof(DevExpress.XtraGrid.GridControl))
+            //    {
+            //        //((DevExpress.XtraGrid.GridControl)cnt).MainView.SaveLayoutToRegistry(frm.Name + cnt.Name);
+            //    }
+            //}
 
 
             foreach (DevExpress.XtraBars.BarItemLink itm in Kls.Gnl.TaskBar.ItemLinks)
