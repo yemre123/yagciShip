@@ -71,7 +71,18 @@ namespace YAGCI_SHIPPING.Kls
         
         }
 
-     
+        public static void Write(string str)
+        {
+            try
+            {
+                string modul = (new System.Diagnostics.StackTrace()).GetFrame(1).GetMethod().ToString();
+                System.Diagnostics.Trace.WriteLine(DateTime.Now.ToString() + "\t" + str + "\t" + modul);
+            }
+            catch
+            {
+                ;
+            }
+        }
 
         public static void LogYaz(string STR)
         {

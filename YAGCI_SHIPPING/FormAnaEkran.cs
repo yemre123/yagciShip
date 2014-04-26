@@ -36,7 +36,8 @@ namespace YAGCI_SHIPPING.Formlar
 
             DB.XP.Connect(Properties.Settings.Default.constr);
 
-#if !DEBUG
+#if DEBUG
+            new FormTrace().Show();
             Gnl.AktifKullanici = DB.XP.Crs.FindObject<Data.Tables.KULLANICI>(CriteriaOperator.Parse(" ADI = ? And PWORD = ?", "UMÝT", "1"));
             if (object.ReferenceEquals(Gnl.AktifKullanici, null))
                 Kls.Dlg.Hata("Test kullanicisi tanimli degil!");
@@ -92,7 +93,8 @@ namespace YAGCI_SHIPPING.Formlar
                     barSubItem2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 }
 
-                this.WindowState = FormWindowState.Maximized;                
+                this.WindowState = FormWindowState.Maximized;
+                System.Diagnostics.Trace.WriteLine("Basladi.");
             }
             catch (Exception ex)
             {
