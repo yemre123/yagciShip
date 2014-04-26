@@ -128,6 +128,7 @@
             this.btnYazdir.Size = new System.Drawing.Size(94, 21);
             this.btnYazdir.TabIndex = 0;
             this.btnYazdir.Text = "Yazdır";
+            this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
             // 
             // btnIceri
             // 
@@ -137,6 +138,7 @@
             this.btnIceri.Size = new System.Drawing.Size(84, 21);
             this.btnIceri.TabIndex = 0;
             this.btnIceri.Text = "İçeri";
+            this.btnIceri.Click += new System.EventHandler(this.btnIceri_Click);
             // 
             // btnKaydet
             // 

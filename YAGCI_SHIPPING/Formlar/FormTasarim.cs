@@ -94,8 +94,17 @@ namespace YAGCI_SHIPPING.Formlar
             if (axOfficeViewer1.IsOpened)
             {
                 axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogSaveCopy);
-
             }
+        }
+
+        private void btnIceri_Click(object sender, EventArgs e)
+        {
+            axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogOpen);
+        }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
