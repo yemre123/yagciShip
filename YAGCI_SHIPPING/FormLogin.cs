@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using YAGCI_SHIPPING.Kls;
 using DevExpress.Xpo;
+using DevExpress.Data.Filtering;
 
 namespace YAGCI_SHIPPING.Formlar
 {
@@ -17,6 +18,10 @@ namespace YAGCI_SHIPPING.Formlar
         public FormLogin()
         {
             InitializeComponent();
+
+
+            xpColFirms.Session = DB.XP.Crs;
+            xpColKul.Session = DB.XP.Crs;
         }
 
     
@@ -52,11 +57,7 @@ namespace YAGCI_SHIPPING.Formlar
             {
                 int by = (int)Properties.Settings.Default.ProgramMod;
 
-                cmbKullanici.Properties.Items.AddRange(
-                    new XPCollection<Data.Tables.KULLANICI>(DB.XP.Crs).Where(u => u.KULTUR.GetHashCode() == by).Select(x => x.ADI.Trim() + " " + x.SOYADI).ToArray());
-
-                cmbGemiler.Properties.DataSource =
-                new XPCollection<Data.Tables.FIRMALAR>(DB.XP.Crs);
+                xpColKul.Criteria = CriteriaOperator.Parse(" KULTUR = (?) ", by);
 
                 //xpView1.Reload();
             }
@@ -74,24 +75,25 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            if (cmbKullanici.SelectedIndex < 0)
+            if (cmbKullanici.EditValue==null)
                 return;
 
-            int idx = cmbKullanici.SelectedIndex;
+            int idx = (int)cmbKullanici.EditValue;
            
             try
             {
                 if (cmbGemiler.EditValue == null)
                     throw new Exception(" Gemi adını seçiniz... ");
 
-                string sekul = cmbKullanici.Text.Split(' ')[0].Trim();
-
-                var snc = new XPCollection<Data.Tables.KULLANICI>(DB.XP.Crs).Where(x => x.ADI.Trim() == sekul && x.PWORD == txtPass.Text);
-
-                if (snc == null || snc.Count() < 1)
+                
+                Data.Tables.KULLANICI kul=
+                cmbKullanici.Properties.GetDataSourceRowByKeyValue(cmbKullanici.EditValue) as Data.Tables.KULLANICI;
+             
+              
+                if (kul == null || kul.PWORD==txtPass.Text)
                     throw new Exception("Bilgiler dogru deil , kontrol ediniz..!");
 
-                Gnl.AktifKullanici = snc.ToList()[0];
+                Gnl.AktifKullanici = kul;
 
                
                 Data.Tables.FIRMALAR oo = cmbGemiler.Properties.GetDataSourceRowByKeyValue(cmbGemiler.EditValue)
