@@ -113,9 +113,9 @@
             // btnDisari
             // 
             this.btnDisari.Image = global::YAGCI_SHIPPING.Properties.Resources._1381684275_agt_update_misc;
-            this.btnDisari.Location = new System.Drawing.Point(268, 2);
+            this.btnDisari.Location = new System.Drawing.Point(250, 2);
             this.btnDisari.Name = "btnDisari";
-            this.btnDisari.Size = new System.Drawing.Size(94, 21);
+            this.btnDisari.Size = new System.Drawing.Size(88, 21);
             this.btnDisari.TabIndex = 0;
             this.btnDisari.Text = "Dışarı";
             this.btnDisari.Click += new System.EventHandler(this.btnDisari_Click);
@@ -123,9 +123,9 @@
             // btnYazdir
             // 
             this.btnYazdir.Image = global::YAGCI_SHIPPING.Properties.Resources._1382801332_print;
-            this.btnYazdir.Location = new System.Drawing.Point(88, 2);
+            this.btnYazdir.Location = new System.Drawing.Point(82, 2);
             this.btnYazdir.Name = "btnYazdir";
-            this.btnYazdir.Size = new System.Drawing.Size(94, 21);
+            this.btnYazdir.Size = new System.Drawing.Size(88, 21);
             this.btnYazdir.TabIndex = 0;
             this.btnYazdir.Text = "Yazdır";
             this.btnYazdir.Click += new System.EventHandler(this.btnYazdir_Click);
@@ -133,9 +133,9 @@
             // btnIceri
             // 
             this.btnIceri.Image = global::YAGCI_SHIPPING.Properties.Resources._1370996736_plus_32;
-            this.btnIceri.Location = new System.Drawing.Point(183, 2);
+            this.btnIceri.Location = new System.Drawing.Point(171, 2);
             this.btnIceri.Name = "btnIceri";
-            this.btnIceri.Size = new System.Drawing.Size(84, 21);
+            this.btnIceri.Size = new System.Drawing.Size(78, 21);
             this.btnIceri.TabIndex = 0;
             this.btnIceri.Text = "İçeri";
             this.btnIceri.Click += new System.EventHandler(this.btnIceri_Click);
@@ -145,7 +145,7 @@
             this.btnKaydet.Image = global::YAGCI_SHIPPING.Properties.Resources._1370991738_3floppy_unmount;
             this.btnKaydet.Location = new System.Drawing.Point(3, 2);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(84, 21);
+            this.btnKaydet.Size = new System.Drawing.Size(78, 21);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             // 
