@@ -92,6 +92,18 @@ namespace YAGCI_SHIPPING.Formlar
                 Microsoft.Office.Interop.Word.DocumentClass doc = axOfficeViewer1.ActiveDocument as Microsoft.Office.Interop.Word.DocumentClass;
                 if (doc != null)
                 {
+                    foreach (Microsoft.Office.Interop.Word.Paragraph p in doc.Paragraphs)
+                    {
+                        System.Diagnostics.Trace.WriteLine(p.ToString());
+                        if (p.Range != null)
+                        {
+                            System.Diagnostics.Trace.WriteLine(p.Range.Text.ToString());
+                        }
+                    }
+
+                    if (doc.Paragraphs.Count > 1)
+                        doc.Paragraphs[2].Range.Text = "KL Form No:00-Rev 0"; // index 0 dan baslamiyor 1 den basliyor
+                    
                     doc.Content.InsertAfter("deneme");
                 }
                 
