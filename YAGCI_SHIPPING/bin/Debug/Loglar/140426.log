@@ -11,3 +11,12 @@
    konum: System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.Formlar() d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 107
    konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.MainMenu_Load(Object sender, EventArgs e) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 80
+[17:08:28] -> Nesne başvurusu bir nesnenin örneğine ayarlanmadı.   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.<Formlar>b__1(KULLANICI y) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 108
+   konum: System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   konum: System.Linq.Enumerable.Count[TSource](IEnumerable`1 source)
+   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.<Formlar>b__0(KULLANICIGRUPDETAYLARI x) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 108
+   konum: System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   konum: System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   konum: System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.Formlar() d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 107
+   konum: YAGCI_SHIPPING.Formlar.FormAnaEkran.MainMenu_Load(Object sender, EventArgs e) d:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\FormAnaEkran.cs içinde: satır 80
