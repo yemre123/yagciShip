@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace YAGCI_SHIPPING.Data.Tables
 {
-    [Persistent(@"KULLANICI")]
+    [Persistent(@"KULLANICI"),DeferredDeletion(false),OptimisticLocking(false)]
     public class KULLANICI : XPObject
     {
 
@@ -561,7 +561,7 @@ namespace YAGCI_SHIPPING.Data.Tables
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
    
-    [Persistent(@"TANIMLAR")]
+    [Persistent(@"TANIMLAR"),DeferredDeletion(false),OptimisticLocking(false)]
     public class TANIMLAR : XPObject
     {
         [Size(16)]
@@ -703,19 +703,7 @@ namespace YAGCI_SHIPPING.Data.Tables
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 
-
-    [Persistent(@"test")]
-    public class test : XPObject
-    {
-        public string cc { get; set; }
-        public DateTime dtt { get; set; }
-
-        public test(Session session) : base(session) { }
-        public test() : base(Session.DefaultSession) { }
-        public override void AfterConstruction() { base.AfterConstruction(); }
-    }
-
-    [Persistent(@"REVIZYON")]
+    [Persistent(@"REVIZYON"), DeferredDeletion(false), OptimisticLocking(false)]
     public class REVIZYON : XPObject
     {
         public string CODE { get; set; }
