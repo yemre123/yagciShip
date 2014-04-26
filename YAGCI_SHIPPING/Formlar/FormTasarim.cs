@@ -50,7 +50,7 @@ namespace YAGCI_SHIPPING.Formlar
                     if (Kls.Dlg.Soru("Bilgi girilmedi yinede kaydedilsin mi?") == System.Windows.Forms.DialogResult.No)
                         return;
                 }
-                
+
             }
         }
 
@@ -81,7 +81,7 @@ namespace YAGCI_SHIPPING.Formlar
             try
             {
                 timerFormAc.Enabled = false;
-                axOfficeViewer1.Open(@"D:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\bin\gemi.doc");
+                axOfficeViewer1.Open(Application.StartupPath + "\\gemi.doc");
             }
             catch (Exception exc)
             {
@@ -96,7 +96,6 @@ namespace YAGCI_SHIPPING.Formlar
                 axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogSaveCopy);
             }
         }
-
         private void btnIceri_Click(object sender, EventArgs e)
         {
             axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogOpen);
@@ -104,7 +103,9 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void btnYazdir_Click(object sender, EventArgs e)
         {
-
+            if (axOfficeViewer1.IsOpened)
+                axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
         }
+
     }
 }
