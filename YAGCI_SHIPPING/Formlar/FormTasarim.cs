@@ -88,5 +88,14 @@ namespace YAGCI_SHIPPING.Formlar
                 Kls.Dlg.Hata(exc.Message);
             }
         }
+
+        private void btnDisari_Click(object sender, EventArgs e)
+        {
+            if (axOfficeViewer1.IsOpened)
+            {
+                axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogSaveCopy);
+
+            }
+        }
     }
 }
