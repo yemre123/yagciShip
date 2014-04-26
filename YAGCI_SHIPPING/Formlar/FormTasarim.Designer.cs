@@ -39,6 +39,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnYazdir = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.axOfficeViewer1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRevizyon.Properties)).BeginInit();
@@ -66,7 +68,9 @@
             this.panel1.Controls.Add(this.txtRevizyon);
             this.panel1.Controls.Add(this.editFormAdi);
             this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.btnYazdir);
+            this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.btnKaydet);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -76,7 +80,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(430, 6);
+            this.labelControl2.Location = new System.Drawing.Point(634, 6);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 13);
             this.labelControl2.TabIndex = 5;
@@ -84,14 +88,14 @@
             // 
             // txtRevizyon
             // 
-            this.txtRevizyon.Location = new System.Drawing.Point(496, 3);
+            this.txtRevizyon.Location = new System.Drawing.Point(700, 3);
             this.txtRevizyon.Name = "txtRevizyon";
             this.txtRevizyon.Size = new System.Drawing.Size(100, 20);
             this.txtRevizyon.TabIndex = 4;
             // 
             // editFormAdi
             // 
-            this.editFormAdi.Location = new System.Drawing.Point(241, 3);
+            this.editFormAdi.Location = new System.Drawing.Point(445, 3);
             this.editFormAdi.Name = "editFormAdi";
             this.editFormAdi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -100,7 +104,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(193, 6);
+            this.labelControl1.Location = new System.Drawing.Point(397, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(42, 13);
             this.labelControl1.TabIndex = 2;
@@ -123,6 +127,24 @@
             this.btnKaydet.Size = new System.Drawing.Size(84, 21);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::YAGCI_SHIPPING.Properties.Resources._1370996736_plus_32;
+            this.simpleButton1.Location = new System.Drawing.Point(183, 2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(84, 21);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "İçeri";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Image = global::YAGCI_SHIPPING.Properties.Resources._1381684275_agt_update_misc;
+            this.simpleButton2.Location = new System.Drawing.Point(268, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(94, 21);
+            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.Text = "Dışarı";
             // 
             // FormTasarim
             // 
@@ -155,6 +177,8 @@
         private DevExpress.XtraEditors.ButtonEdit editFormAdi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtRevizyon;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
 
