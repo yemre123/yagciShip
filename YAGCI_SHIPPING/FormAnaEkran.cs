@@ -305,7 +305,8 @@ namespace YAGCI_SHIPPING.Formlar
         private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //new FormDesing() { MdiParent = this, FrmAnaEkran = this }.Show();
-            new FormTasarim() { MdiParent = this, FrmAnaEkran = this }.Show();
+            //new FormTasarim() { MdiParent = this, FrmAnaEkran = this }.Show();
+            new FormTasarim().ShowDialog();
         }
 
 

@@ -24,8 +24,13 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //axOfficeViewer1.PrintOut();
-            axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
+            if (axOfficeViewer1.IsOpened)
+            {
+                //axOfficeViewer1.PrintOut();
+                //axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
+                //axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPageSetup);
+                axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
