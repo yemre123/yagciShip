@@ -3,6 +3,10 @@ using System.Linq;
 using DevExpress.Xpo;
 using DevExpress.Data.Filtering;
 using DevExpress.Xpo.DB;
+using DevExpress.Xpo.Metadata;
+using Data;
+using YAGCI_SHIPPING.Kls;
+
 
 namespace YAGCI_SHIPPING.DB
 {
@@ -26,11 +30,20 @@ namespace YAGCI_SHIPPING.DB
                     using (UnitOfWork wrk = new UnitOfWork())
                     {
                         YAGCI_SHIPPING.Data.Tables.KULLANICI kul = new Data.Tables.KULLANICI(wrk);
-                        kul.ADI = "UMÝT";
+                        kul.ADI = "UMÝT(þirket)";
                         kul.SICIL_NO = "0001";
                         kul.PWORD = "1";
                         kul.ENTEGRASYON = true;
+                        kul.KULTUR = MOD.Server;
                         kul.Save();
+
+                        YAGCI_SHIPPING.Data.Tables.KULLANICI kul1 = new Data.Tables.KULLANICI(wrk);
+                        kul1.ADI = "UMÝT(gemi)";
+                        kul1.SICIL_NO = "0002";
+                        kul1.PWORD = "1";
+                        kul1.ENTEGRASYON = true;
+                        kul1.KULTUR = MOD.Client;
+                        kul1.Save();
 
                         YAGCI_SHIPPING.Data.Tables.KULLANICIGRUP grp = wrk.FindObject<YAGCI_SHIPPING.Data.Tables.KULLANICIGRUP>(CriteriaOperator.Parse(" GRUPAD = ? ", "1"));
                         if (grp == null)
@@ -38,6 +51,7 @@ namespace YAGCI_SHIPPING.DB
                             grp = new YAGCI_SHIPPING.Data.Tables.KULLANICIGRUP(wrk);
                             grp.GRUPAD = "1";
                             grp.KULLANICIs.Add(kul);
+                            grp.KULLANICIs.Add(kul1);
                             grp.Save();
                         }
 
@@ -124,6 +138,32 @@ namespace YAGCI_SHIPPING.DB
         }
 
         public static DevExpress.Xpo.Session Crs { get { return _session; } }
+
+        public static void DbUpdateSchema()
+        {
+
+            DevExpress.Xpo.Metadata.XPDictionary dict = new DevExpress.Xpo.Metadata.ReflectionDictionary();
+            System.Reflection.Assembly[] objects = { typeof(Data.Tables.FORMLAR).Assembly, typeof(XPObject).Assembly };
+            dict.GetDataStoreSchema(objects);
+
+
+            foreach (XPClassInfo ci in dict.Classes)
+            {
+                if (ci.IsPersistent && ci.Attributes.Where(x => x.GetType() == typeof(PersAliasType)).Count() > 0)
+                {
+
+                    ci.RemoveAttribute(typeof(PersistentAttribute));
+ 
+                        ci.AddAttribute(new PersistentAttribute(ci.TableName + "_" + Gnl.AktifFirma.FRMCODE));
+              
+                }
+            }
+
+            DevExpress.Xpo.DB.IDataStore store = DevExpress.Xpo.XpoDefault.GetConnectionProvider(Properties.Settings.Default.constr, DevExpress.Xpo.DB.AutoCreateOption.DatabaseAndSchema);
+            DevExpress.Xpo.XpoDefault.DataLayer = new DevExpress.Xpo.ThreadSafeDataLayer(dict, store);
+            _session = new DevExpress.Xpo.Session();
+            _session.UpdateSchema();
+        }
     }
 
 
