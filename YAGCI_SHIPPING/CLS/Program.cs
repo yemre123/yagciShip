@@ -59,6 +59,7 @@ namespace YAGCI_SHIPPING
                 return;
             }
 
+            DB.XP.Connect(Properties.Settings.Default.constr);
 
             Cultur = new CultureInfo("Tr-tr");
 

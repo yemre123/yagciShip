@@ -34,9 +34,9 @@ namespace YAGCI_SHIPPING.Formlar
            defaultLookAndFeel1.LookAndFeel.SetSkinStyle(Kls.Gnl.IniData.Read("DevexTema", "VS2010"));
 
 
-            DB.XP.Connect(Properties.Settings.Default.constr);
+           
 
-#if DEBUG
+#if !DEBUG
             //new FormTrace().Show();
             Gnl.AktifKullanici = DB.XP.Crs.FindObject<Data.Tables.KULLANICI>(CriteriaOperator.Parse(" ADI = ? And PWORD = ? And KULTUR = ?", "UMÝT", "1", DB.MOD.Server));
             if (object.ReferenceEquals(Gnl.AktifKullanici, null))
