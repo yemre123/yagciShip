@@ -104,3 +104,18 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
+
+/*
+ //Remove Office Viewer Component Title Bar and create a new Word document
+     axOfficeViewer1.Titlebar = false;
+     axOfficeViewer1.CreateNew(“Word.Document”);
+     axOfficeViewer1.Activate();
+     //Invoke Word properties
+     oDoc = (Word.Document)axOfficeViewer1.ActiveDocument;
+     oDoc.ActiveWindow.View.Type = Word.WdViewType.wdOutlineView;
+     oDoc.ActiveWindow.DisplayRulers = false;
+     oDoc.ActiveWindow.DisplayScreenTips = false;
+     oDoc.ActiveWindow.DisplayHorizontalScrollBar = false;
+     oDoc.ActiveWindow.DisplayVerticalRuler = false;
+     oDoc.ActiveWindow.DisplayVerticalScrollBar = true;
+ */

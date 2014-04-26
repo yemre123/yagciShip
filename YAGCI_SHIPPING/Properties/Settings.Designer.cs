@@ -47,10 +47,20 @@ namespace YAGCI_SHIPPING.Properties {
             }
         }
         
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.1.1.56/ys/serv.asmx")]
+        public string YAGCI_SHIPPING_serv_serv {
+            get {
+                return ((string)(this["YAGCI_SHIPPING_serv_serv"]));
+            }
+        }
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("XpoProvider=MSSqlServer;packet size=4096;data source=10.1.1.204;persist security " +
-            "info=False;initial catalog=YGSHP;Connect Timeout=50;User=sa;Password=20012001;Po" +
+        [global::System.Configuration.DefaultSettingValueAttribute("XpoProvider=MSSqlServer;packet size=4096;data source=10.1.1.50\\SQL2005;persist se" +
+            "curity info=False;initial catalog=YGSHP;Connect Timeout=50;User=sa;Password=1;Po" +
             "oling=False")]
         public string constr {
             get {
@@ -61,13 +71,15 @@ namespace YAGCI_SHIPPING.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://10.1.1.56/ys/serv.asmx")]
-        public string YAGCI_SHIPPING_serv_serv {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string XPO {
             get {
-                return ((string)(this["YAGCI_SHIPPING_serv_serv"]));
+                return ((string)(this["XPO"]));
+            }
+            set {
+                this["XPO"] = value;
             }
         }
     }

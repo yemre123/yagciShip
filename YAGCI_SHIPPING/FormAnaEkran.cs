@@ -38,7 +38,7 @@ namespace YAGCI_SHIPPING.Formlar
 
 #if DEBUG
             //new FormTrace().Show();
-            Gnl.AktifKullanici = DB.XP.Crs.FindObject<Data.Tables.KULLANICI>(CriteriaOperator.Parse(" ADI = ? And PWORD = ?", "UMÝT", "1"));
+            Gnl.AktifKullanici = DB.XP.Crs.FindObject<Data.Tables.KULLANICI>(CriteriaOperator.Parse(" ADI = ? And PWORD = ? And KULTUR = ?", "UMÝT", "1", DB.MOD.Server));
             if (object.ReferenceEquals(Gnl.AktifKullanici, null))
                 Kls.Dlg.Hata("Test kullanicisi tanimli degil!");
 

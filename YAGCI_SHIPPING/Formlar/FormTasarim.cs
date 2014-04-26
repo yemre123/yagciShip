@@ -24,7 +24,8 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            axOfficeViewer1.PrintPreview();
+            //axOfficeViewer1.PrintOut();
+            axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
