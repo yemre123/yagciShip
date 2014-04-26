@@ -31,6 +31,7 @@ namespace YAGCI_SHIPPING.DB
                     {
                         YAGCI_SHIPPING.Data.Tables.KULLANICI kul = new Data.Tables.KULLANICI(wrk);
                         kul.ADI = "UMÝT(þirket)";
+                        kul.SOYADI = "soyad";
                         kul.SICIL_NO = "0001";
                         kul.PWORD = "1";
                         kul.ENTEGRASYON = true;
@@ -39,6 +40,7 @@ namespace YAGCI_SHIPPING.DB
 
                         YAGCI_SHIPPING.Data.Tables.KULLANICI kul1 = new Data.Tables.KULLANICI(wrk);
                         kul1.ADI = "UMÝT(gemi)";
+                        kul1.SOYADI = "soyad";
                         kul1.SICIL_NO = "0002";
                         kul1.PWORD = "1";
                         kul1.ENTEGRASYON = true;
@@ -109,17 +111,17 @@ namespace YAGCI_SHIPPING.DB
                         //dsfdsdfsfdsdf
 
                         YAGCI_SHIPPING.Data.Tables.FIRMALAR frm = new Data.Tables.FIRMALAR(wrk);
-                        frm.FRMCODE = "M/V MUAMMER YAÐCI";
+                        frm.FRMCODE = "001";
                         frm.FRMNAME = "M/V MUAMMER YAÐCI";
                         frm.Save();
 
                         YAGCI_SHIPPING.Data.Tables.FIRMALAR frm1 = new Data.Tables.FIRMALAR(wrk);
-                        frm1.FRMCODE = "M/V SEHER II";
+                        frm1.FRMCODE = "002";
                         frm1.FRMNAME = "M/V SEHER II";
                         frm1.Save();
 
                         YAGCI_SHIPPING.Data.Tables.FIRMALAR frm2 = new Data.Tables.FIRMALAR(wrk);
-                        frm2.FRMCODE = "M/V MUSTAFA YAÐCI";
+                        frm2.FRMCODE = "003";
                         frm2.FRMNAME = "M/V MUSTAFA YAÐCI";
                         frm2.Save();
 
