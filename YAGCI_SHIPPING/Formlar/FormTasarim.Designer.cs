@@ -28,94 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTasarim));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.axOfficeViewer1 = new AxOfficeViewer.AxOfficeViewer();
-            this.toolStrip1.SuspendLayout();
+            this.timerFormAc = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.xpCollection1 = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axOfficeViewer1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(912, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::YAGCI_SHIPPING.Properties.Resources._1322486893_preferences_desktop_color;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // axOfficeViewer1
             // 
-            this.axOfficeViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axOfficeViewer1.Enabled = true;
-            this.axOfficeViewer1.Location = new System.Drawing.Point(0, 25);
+            this.axOfficeViewer1.Location = new System.Drawing.Point(222, 203);
             this.axOfficeViewer1.Name = "axOfficeViewer1";
             this.axOfficeViewer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axOfficeViewer1.OcxState")));
-            this.axOfficeViewer1.Size = new System.Drawing.Size(912, 444);
+            this.axOfficeViewer1.Size = new System.Drawing.Size(690, 266);
             this.axOfficeViewer1.TabIndex = 1;
+            // 
+            // timerFormAc
+            // 
+            this.timerFormAc.Interval = 500;
+            this.timerFormAc.Tick += new System.EventHandler(this.timerFormAc_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Controls.Add(this.lookUpEdit1);
+            this.panel1.Controls.Add(this.simpleButton2);
+            this.panel1.Controls.Add(this.simpleButton1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(912, 29);
+            this.panel1.TabIndex = 2;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Image = global::YAGCI_SHIPPING.Properties.Resources._1382801332_print;
+            this.simpleButton2.Location = new System.Drawing.Point(93, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(89, 31);
+            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.Text = "Yazdır";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::YAGCI_SHIPPING.Properties.Resources._1370991738_3floppy_unmount;
+            this.simpleButton1.Location = new System.Drawing.Point(3, 2);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(89, 31);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Kaydet";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(262, 3);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.DataSource = this.xpCollection1;
+            this.lookUpEdit1.Properties.DisplayMember = "ADI";
+            this.lookUpEdit1.Properties.ValueMember = "Oid";
+            this.lookUpEdit1.Size = new System.Drawing.Size(154, 20);
+            this.lookUpEdit1.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(193, 6);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(42, 13);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Form Adi";
+            // 
+            // xpCollection1
+            // 
+            this.xpCollection1.ObjectType = typeof(YAGCI_SHIPPING.Data.Tables.KULLANICI);
             // 
             // FormTasarim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 469);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.axOfficeViewer1);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "FormTasarim";
             this.Text = "FormTasarim";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTasarim_FormClosing);
             this.Load += new System.EventHandler(this.FormTasarim_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axOfficeViewer1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpCollection1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private AxOfficeViewer.AxOfficeViewer axOfficeViewer1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Timer timerFormAc;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.Xpo.XPCollection xpCollection1;
     }
 }
 

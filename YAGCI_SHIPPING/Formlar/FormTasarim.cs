@@ -22,17 +22,18 @@ namespace YAGCI_SHIPPING.Formlar
         {
             axOfficeViewer1.set_EnableFileCommand(OfficeViewer.FileCommandType.FileOpen, false);
             axOfficeViewer1.Toolbars = false;
+            axOfficeViewer1.Menubar = false;
             axOfficeViewer1.MenuAccelerators = false;
-            
             Kill();
+            timerFormAc.Start();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (axOfficeViewer1.IsOpened)
             {
-                axOfficeViewer1.PrintPreview();
-                //axOfficeViewer1.PrintOut();
+                axOfficeViewer1.PrintOut();
+                //axOfficeViewer1.PrintPreview();
                 //axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
                 //axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPageSetup);
                 //axOfficeViewer1.ShowDialog(OfficeViewer.ShowDialogType.DialogPrint);
@@ -42,12 +43,15 @@ namespace YAGCI_SHIPPING.Formlar
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            axOfficeViewer1.Open(@"D:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\bin\gemi.doc");
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            axOfficeViewer1.PrintPreviewExit();
+            if (axOfficeViewer1.IsOpened)
+            {
+                if (!axOfficeViewer1.IsDirty)
+                {
+                    if (Kls.Dlg.Soru("Bilgi girilmedi yinede kaydedilsin mi?") == System.Windows.Forms.DialogResult.No)
+                        return;
+                }
+                
+            }
         }
 
         private void FormTasarim_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,10 +61,31 @@ namespace YAGCI_SHIPPING.Formlar
 
         private static void Kill()
         {
-            System.Diagnostics.Process[] proc = System.Diagnostics.Process.GetProcessesByName("WINWORD.EXE");
-            foreach (System.Diagnostics.Process p in proc)
+            try
             {
-                p.Kill();
+                System.Diagnostics.Process[] proc = System.Diagnostics.Process.GetProcesses();
+                foreach (System.Diagnostics.Process p in proc)
+                {
+                    System.Diagnostics.Trace.WriteLine(p.ProcessName);
+                    if (p.ProcessName.Equals("WINWORD"))
+                        p.Kill();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void timerFormAc_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                timerFormAc.Enabled = false;
+                axOfficeViewer1.Open(@"D:\Projeler\Calismalar\YAGCI_SHIPPING\yagciShip\YAGCI_SHIPPING\bin\gemi.doc");
+            }
+            catch (Exception exc)
+            {
+                Kls.Dlg.Hata(exc.Message);
             }
         }
     }
