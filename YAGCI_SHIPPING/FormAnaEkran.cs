@@ -22,7 +22,6 @@ namespace YAGCI_SHIPPING.Formlar
 
             Kls.Gnl.TaskBar = brTaskBar;
         }
-
        
         private void MainMenu_Load(object sender, EventArgs e)
         {
@@ -169,8 +168,6 @@ namespace YAGCI_SHIPPING.Formlar
             }            
         }
 
-        
-
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -305,8 +302,8 @@ namespace YAGCI_SHIPPING.Formlar
         private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //new FormDesing() { MdiParent = this, FrmAnaEkran = this }.Show();
-            //new FormTasarim() { MdiParent = this, FrmAnaEkran = this }.Show();
-            new FormTasarim().ShowDialog();
+            new FormTasarim() { MdiParent = this, FrmAnaEkran = this }.Show();
+            //new FormTasarim().ShowDialog();
         }
 
 
