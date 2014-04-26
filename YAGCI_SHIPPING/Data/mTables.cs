@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DevExpress.Xpo;
 using System.Xml.Serialization;
+using Data;
 
 namespace YAGCI_SHIPPING.Data.Tables
 {
@@ -235,4 +236,45 @@ namespace YAGCI_SHIPPING.Data.Tables
         public FORMGENERIC() : base(Session.DefaultSession) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
+
+    [Persistent("TASARIMLAR"), DeferredDeletion(false), OptimisticLocking(false), PersAliasType]
+    public class TASARIMLAR : XPObject
+    {
+        public string REVIZYONNO { get; set; }
+        public string FORMADI { get; set; }
+        
+        public int KULID { get; set; }
+        public int MENUID { get; set; }
+
+        [Size(3)]
+        public string GEMINO { get; set; }
+
+        public DateTime CDATE { get; set; }
+        public bool DURUM { get; set; }
+        public byte[] FL { get; set; }
+
+
+        public TASARIMLAR(Session session) : base(session) { }
+        public TASARIMLAR() : base(Session.DefaultSession) { }
+        public override void AfterConstruction() { base.AfterConstruction(); }
+    }
+
+    [Persistent("ARSIV"), DeferredDeletion(false), OptimisticLocking(false), PersAliasType]
+    public class ARSIV : XPObject
+    {
+        public int  TASARIMID { get; set; }        
+        public int KULID { get; set; }
+  
+        [Size(3)]
+        public string GEMINO { get; set; }
+
+        public DateTime CDATE { get; set; }       
+        public byte[] FL { get; set; }
+
+
+        public ARSIV(Session session) : base(session) { }
+        public ARSIV() : base(Session.DefaultSession) { }
+        public override void AfterConstruction() { base.AfterConstruction(); }
+    }
+
 }
